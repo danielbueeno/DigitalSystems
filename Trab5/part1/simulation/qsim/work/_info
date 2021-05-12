@@ -1,0 +1,96 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/danie/Documents/prog/DigitalSystems/Trab5/part1/simulation/qsim
+Ecmp4
+Z1 w1619682979
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 N5CzKW88F^ShIK@<7Vek12
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z7 DPx10 cycloneive 21 cycloneive_components 0 22 K8IbX`K5[Y1gJUKg2X_071
+R0
+Z8 8CmpN_Demo.vho
+Z9 FCmpN_Demo.vho
+l0
+L34
+VV4_n4E715hX;=nYDMI:3k0
+!s100 b>?`:e]coDYI:ooBa7;VA1
+Z10 OV;C;10.5b;63
+32
+Z11 !s110 1619682985
+!i10b 1
+Z12 !s108 1619682984.000000
+Z13 !s90 -work|work|CmpN_Demo.vho|
+Z14 !s107 CmpN_Demo.vho|
+!i113 1
+Z15 o-work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 4 cmp4 0 22 V4_n4E715hX;=nYDMI:3k0
+l104
+L45
+VS?N<EGCT=jBEGD4?2[EmT1
+!s100 k4VjVQFRY9al`CBIA8LIZ0
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Ecmp4_vhd_vec_tst
+Z17 w1619682978
+R5
+R6
+R0
+Z18 8CpmSimulation.vwf.vht
+Z19 FCpmSimulation.vwf.vht
+l0
+L31
+V7V8W=PD72MDkHzH_ToEof3
+!s100 aW[f0nDh?QHMRnZTPdhkU2
+R10
+32
+R11
+!i10b 1
+Z20 !s108 1619682985.000000
+Z21 !s90 -work|work|CpmSimulation.vwf.vht|
+Z22 !s107 CpmSimulation.vwf.vht|
+!i113 1
+R15
+R16
+Acmp4_arch
+R5
+R6
+DEx4 work 16 cmp4_vhd_vec_tst 0 22 7V8W=PD72MDkHzH_ToEof3
+l52
+L33
+V8V3<1e>c?Dl?iBjS87Y?G1
+!s100 jAaEO6ES2eelOAJg`O:bi2
+R10
+32
+R11
+!i10b 1
+R20
+R21
+R22
+!i113 1
+R15
+R16
