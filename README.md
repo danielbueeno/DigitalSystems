@@ -1,8 +1,25 @@
 # DigitalSystems
 Design of digital systems using VHDL
 
-## Trab1
-Introduction to VHDL
+## Combinational Logic Blocks
+- Encoder 
+- Decoder
+- Multiplexer
+- Demultiplexer
+- Adder 
+- Subtractor 
+- ALU
 
-## Trab2
-Simple combinatorial components - decoder, mux, encoder, 8 seg display - in VHDL
+## Sequential Components
+- SR Latch
+- D Flip-Flop
+- Up/Down Counter
+- Comparator 
+- Register 
+
+## Finite State machines
+- Chronometer
+- Sequence detector
+
+# Final project 
+- Digital Clock
