@@ -1,5 +1,5 @@
 Flow report for Encoder4_2En
-Thu Jun 10 13:26:23 2021
+Thu Jun 10 13:34:34 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Jun 10 13:26:23 2021       ;
+; Flow Status                        ; Successful - Thu Jun 10 13:34:34 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; Encoder4_2En                                ;
 ; Top-level Entity Name              ; Encoder4_2En                                ;
@@ -109,7 +109,11 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4648 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4648 MB             ; 00:00:01                           ;
-; Total                ; 00:00:15     ; --                      ; --                  ; 00:00:30                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4645 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4648 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4645 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4648 MB             ; 00:00:01                           ;
+; Total                ; 00:00:17     ; --                      ; --                  ; 00:00:32                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -119,6 +123,10 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; DESKTOP-LO92F4E  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-LO92F4E  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-LO92F4E  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-LO92F4E  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-LO92F4E  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-LO92F4E  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-LO92F4E  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-LO92F4E  ; Windows 10 ; 10.0       ; x86_64         ;
@@ -144,6 +152,10 @@ quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_setting
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/danie/Documents/LSD/DigitalSystems/Combinational/Encoder/simulation/qsim/ Encoder4_2En -c Encoder4_2En
 quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Encoder4_2En -c Encoder4_2En --vector_source=C:/Users/danie/Documents/LSD/DigitalSystems/Combinational/Encoder/EncoderTest.vwf --testbench_file=C:/Users/danie/Documents/LSD/DigitalSystems/Combinational/Encoder/simulation/qsim/EncoderTest.vwf.vt
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/danie/Documents/LSD/DigitalSystems/Combinational/Encoder/simulation/qsim/ Encoder4_2En -c Encoder4_2En
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Encoder4_2En -c Encoder4_2En --vector_source=C:/Users/danie/Documents/LSD/DigitalSystems/Combinational/Encoder/EncoderTest.vwf --testbench_file=C:/Users/danie/Documents/LSD/DigitalSystems/Combinational/Encoder/simulation/qsim/EncoderTest.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/danie/Documents/LSD/DigitalSystems/Combinational/Encoder/simulation/qsim/ Encoder4_2En -c Encoder4_2En
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Encoder4_2En -c Encoder4_2En --vector_source=C:/Users/danie/Documents/LSD/DigitalSystems/Combinational/Encoder/EncoderTest.vwf --testbench_file=C:/Users/danie/Documents/LSD/DigitalSystems/Combinational/Encoder/simulation/qsim/EncoderTest.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/danie/Documents/LSD/DigitalSystems/Combinational/Encoder/simulation/qsim/ Encoder4_2En -c Encoder4_2En
 
 
 
