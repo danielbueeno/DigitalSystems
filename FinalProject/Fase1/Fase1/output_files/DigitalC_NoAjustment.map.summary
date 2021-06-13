@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sun Jun 13 17:38:07 2021
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : DigitalC_NoAjustment
+Top-level Entity Name : DigitalC_NoAjustment
+Family : Cyclone IV E
+Total logic elements : 325
+    Total combinational functions : 304
+    Dedicated logic registers : 238
+Total registers : 238
+Total pins : 30
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

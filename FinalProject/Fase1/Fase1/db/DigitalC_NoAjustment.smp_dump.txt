@@ -1,0 +1,7 @@
+
+State Machine - |DigitalC_NoAjustment|DispCntrl:dispC|fstate
+Name fstate.DezH fstate.UniH fstate.DezMin fstate.UniMin 
+fstate.UniMin 0 0 0 0 
+fstate.DezMin 0 0 1 1 
+fstate.UniH 0 1 0 1 
+fstate.DezH 1 0 0 1 

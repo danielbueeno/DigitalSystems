@@ -1,0 +1,31 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+
+entity PCounter is 
+	port( en : in std_logic;
+			Q  : out std_logic;
+			TC : out std_logic;
+	);
+
+end PCounter;
+
+architecture Behavioral of PCounter is 
+
+signal counter : unsigned:= 0;
+
+begin
+	if(rising_edge(en)) then
+		if(counter = 9) then
+			Q  <= '0';
+			TC <= '1';
+		else
+			counter <= counter + 1;
+		end if;
+	end if;
+	
+	Q <= std_logic(counter);
+	
+end Behavioral;
+			

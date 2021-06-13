@@ -1,0 +1,23 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+entity SyncGen is 
+	port( CLOCK_50	 : in std_logic;
+			ProgClk   : out std_logic;
+			TimeClk   : out std_logic;
+			DispClock : out std_logic
+	);
+	
+end SyncGen;
+
+architecture Structural of SyncGen is 
+begin 
+
+	progClk: entity work.ClkDivider(Behavioral)
+				generic map(divFactor => 5000000)
+				port map( CLOCK_50 => clkIn,
+							 ProgClk  => clkOut
+				);
+
+end Structural;
