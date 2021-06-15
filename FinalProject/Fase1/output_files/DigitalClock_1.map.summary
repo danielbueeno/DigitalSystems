@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Jun 15 17:18:36 2021
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : DigitalClock_1
+Top-level Entity Name : DigitalClock_1
+Family : Cyclone IV E
+Total logic elements : 42
+    Total combinational functions : 42
+    Dedicated logic registers : 27
+Total registers : 27
+Total pins : 31
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,147 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+entity DigitalClock_1 is 
+	port( clk      : in std_logic;
+			reset    : in std_logic;
+			seconds  : out std_logic;
+			register0: out std_logic_vector(6 downto 0);
+			register1: out std_logic_vector(6 downto 0);
+			register2: out std_logic_vector(6 downto 0);
+			register3: out std_logic_vector(6 downto 0)
+	);
+	
+end DigitalClock_1;
+
+architecture Structural of DigitalClock_1 is
+
+signal s_progClk : std_logic;
+signal s_timeClk : std_logic;
+signal s_dispClk : std_logic;
+
+signal s_pcounter0: std_logic_vector(3 downto 0);
+signal s_pcounter1: std_logic_vector(3 downto 0);
+signal s_pcounter2: std_logic_vector(3 downto 0);
+signal s_pcounter3: std_logic_vector(3 downto 0);
+signal s_pcounter4: std_logic_vector(3 downto 0);
+signal s_pcounter5: std_logic_vector(3 downto 0);
+
+signal s_tC0: std_logic;
+signal s_tC1: std_logic;
+signal s_tC2: std_logic;
+signal s_tC3: std_logic;
+signal s_tC4: std_logic;
+signal s_tC5: std_logic;
+
+
+
+signal s_mux: std_logic_vector(3 downto 0);
+signal s_bin7Dec: std_logic_vector(6 downto 0);
+
+signal s_dispSel: std_logic_vector(1 downto 0);
+
+begin
+	
+	sync_gen: entity work.SyncGen(Structural)
+				 port map( clk     => clk,
+							 ProgClk => s_progClk,
+							 TimeClk => s_timeClk,
+							 DispClk => s_dispClk
+				);
+				
+				
+	--Counters corresponding to units and tens of seconds, minutes and hours respectively		
+	uniSecCounter: entity work.PCounter(Behavioral)
+				      port map( en  => s_timeCLK,
+									 rst => reset,
+							       Q   => s_pcounter0,
+							       TC  => s_tC0
+				      );
+				
+	dezSecCounter: entity work.PCounter(Behavioral)
+						generic map(count => 6)
+				      port map( en  => s_tC0,
+									 rst => reset,
+							       Q   => s_pcounter1,
+							       TC  => s_tC1
+				      );
+				
+	uniMinCounter: entity work.PCounter(Behavioral)
+				      port map( en  => s_tC1,
+									 rst => reset,
+							       Q   => s_pcounter2,
+							       TC  => s_tC2
+				      );
+						
+	dezMinCounter: entity work.PCounter(Behavioral)
+						generic map(count => 6)
+						port map( en  => s_tC2,
+									 rst => reset,
+									 Q   => s_pcounter3,
+									 TC  => s_tC3
+						);
+						
+	uniHCounter: entity work.PCounter(Behavioral)
+			       port map( en  => s_tC3,
+								  rst => reset,
+								  Q   => s_pcounter4,
+							     TC  => s_tC4
+					);
+					
+	dezHCounter: entity work.PCounter(Behavioral)
+					 generic map(count => 24)
+					 port map( en  => s_tC4,
+								  rst => reset,
+								  Q   => s_pcounter5,
+								  TC  => s_tC5
+					 );
+	
+				
+	mux: entity work.Mux4N(Behavioral)
+		  generic map(size => 4)
+		  port map( selection => s_dispSel,
+					   dataIn0   => s_pcounter2,
+						dataIn1   => s_pcounter3,
+						dataIn2   => s_pcounter4,
+						dataIn3   => s_pcounter5,
+						dataOut   => s_mux
+					);
+					
+	decoder: entity work.Bin7SegDecoder(Behavioral)
+				  port map( binInput  => s_mux,
+							   decOut_n  => s_bin7Dec
+				);
+	
+	reg0: entity work.RegisterN(Behavioral)
+			port map( clk    => clk, 
+						 rst    => reset,
+						 wrEn   => (not s_dispSel(0)) and (not s_dispSel(1)),
+						 dataIn => s_bin7Dec,
+						 dataOut => register0		 
+			);
+	reg1: entity work.RegisterN(Behavioral)
+			port map( clk    => clk, 
+						 rst    => reset,
+						 wrEn   => (s_dispSel(0)) and (not s_dispSel(1)),
+						 dataIn => s_bin7Dec,
+						 dataOut => register1		 
+			);
+	reg2: entity work.RegisterN(Behavioral)
+			port map( clk    => clk, 
+						 rst    => reset,
+						 wrEn   => (not s_dispSel(0)) and (s_dispSel(1)),
+						 dataIn => s_bin7Dec,
+						 dataOut => register2		 
+			);
+	reg3: entity work.RegisterN(Behavioral)
+			port map( clk    => clk, 
+						 rst    => reset,
+						 wrEn   => s_dispSel(0) and s_dispSel(1),
+						 dataIn => s_bin7Dec,
+						 dataOut => register3		 
+			);
+	seconds <= s_timeClk;
+		
+	
+end Structural;
